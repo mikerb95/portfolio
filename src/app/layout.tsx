@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 import '../styles/globals.css'
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL}`
+  : 'https://example.com'
 
 export const metadata: Metadata = {
   title: {
@@ -9,12 +14,12 @@ export const metadata: Metadata = {
   },
   description:
     'Portafolio profesional para mostrar proyectos y CV. Desarrollador de software, web developer y DBA.',
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: 'Portafolio profesional',
     description:
       'Proyectos, experiencia y contacto. Desarrollador de software, web y DBA.',
-    url: 'https://example.com',
+    url: siteUrl,
     siteName: 'Portafolio',
     images: [
       {
@@ -34,6 +39,10 @@ export const metadata: Metadata = {
       'Proyectos, experiencia y contacto. Desarrollador de software, web y DBA.',
     images: ['/og.png'],
   },
+  icons: {
+    icon: '/favicon.ico',
+    other: [{ rel: 'manifest', url: '/site.webmanifest' }],
+  },
 }
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' })
@@ -45,25 +54,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="min-h-dvh flex flex-col">
           <header className="border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50">
             <nav className="container flex h-16 items-center justify-between">
-              <a href="/" className="font-semibold tracking-tight">
+              <Link href="/" className="font-semibold tracking-tight">
                 Mi Portafolio
-              </a>
+              </Link>
               <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <a className="hover:text-accent" href="/proyectos">
-                    Proyectos
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-accent" href="/cv">
-                    CV
-                  </a>
-                </li>
-                <li>
-                  <a className="hover:text-accent" href="/sobre-mi">
-                    Sobre mí
-                  </a>
-                </li>
+                <li><Link className="hover:text-accent" href="/proyectos">Proyectos</Link></li>
+                <li><Link className="hover:text-accent" href="/cv">CV</Link></li>
+                <li><Link className="hover:text-accent" href="/sobre-mi">Sobre mí</Link></li>
               </ul>
             </nav>
           </header>

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getProject } from '@/lib/projects'
+import { allProjects } from '@/lib/projects'
 
 type Params = { params: { slug: string } }
 
@@ -38,4 +39,8 @@ export default function ProjectDetailPage({ params }: Params) {
       </div>
     </div>
   )
+}
+
+export function generateStaticParams() {
+  return allProjects.map((p) => ({ slug: p.slug }))
 }
