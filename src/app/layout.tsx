@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -35,10 +36,12 @@ export const metadata: Metadata = {
   },
 }
 
+const inter = Inter({ subsets: ['latin'], display: 'swap' })
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>
+  <body className={inter.className}>
         <div className="min-h-dvh flex flex-col">
           <header className="border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/50">
             <nav className="container flex h-16 items-center justify-between">
