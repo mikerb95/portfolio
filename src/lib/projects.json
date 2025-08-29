@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "dashboard-analytics",
+    "title": "Dashboard de Analítica",
+    "description": "Panel de métricas con Next.js, Tailwind y Prisma sobre Postgres.",
+    "tags": ["Next.js", "Tailwind", "Prisma", "Postgres"],
+    "repoUrl": "https://github.com/tuusuario/dashboard-analytics",
+    "demoUrl": "https://demo.example.com/dashboard"
+  },
+  {
+    "slug": "api-fastify",
+    "title": "API REST con Fastify",
+    "description": "API de alto rendimiento con Fastify, TypeScript y testing.",
+    "tags": ["Fastify", "TypeScript", "Testing"],
+    "repoUrl": "https://github.com/tuusuario/api-fastify"
+  },
+  {
+    "slug": "etl-dba",
+    "title": "Pipeline ETL (DBA)",
+    "description": "Extracción, transformación y carga con Python y orquestación.",
+    "tags": ["Python", "ETL", "DBA"],
+    "repoUrl": "https://github.com/tuusuario/etl-dba"
+  }
+]
